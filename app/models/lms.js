@@ -20,5 +20,10 @@ module.exports = mongoose.model('lms', {
     totalLostMin :{
         type: Number,
         default : 0
+    },
+    finished :{
+        type : Boolean,
+        default : false
     }
 });
+

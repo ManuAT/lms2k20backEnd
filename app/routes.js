@@ -1,5 +1,6 @@
 var lms = require('./models/lms');
-
+var clue =require('./models/clue');
+var info =require("./models/info");
 function getvalues(res) {
     lms.find(function (err, lmss) {       
         if (err) {
@@ -19,7 +20,17 @@ module.exports = function (app) {
            res.send(todo);
         });
     });
-
+    // all details
+        app.get('/api/score', function (req, res) { 
+            //    console.log("code",req.query)
+        lms.find({
+           
+        }, function (err, todo) {
+            if (err)
+                res.send(err);
+           res.send(todo);
+        });
+    });
     app.post('/api/lms', function (req, res) {  
         console.log(req.body.code);
               
@@ -66,6 +77,9 @@ module.exports = function (app) {
       
        if(req.body.task)  
        newData.task = req.body.task;
+       if(req.body.finished)
+       newData.finished = req.body.finished;
+
         lms.update({code:req.body.code}, {
              $inc:{totalLostMin:req.body.totalLostMin?req.body.totalLostMin:0}
             }, {}, function(err, numAffected) {
@@ -87,9 +101,33 @@ module.exports = function (app) {
           });
     });
 
-    app.get('*', function (req, res) {
-        res.sendFile(__dirname + '/public/index.html'); 
+    // get for clue
+    app.get('/api/clue', function (req, res) { 
+               console.log("sno",req.query.sno)
+        clue.findOne({
+            sno:  req.query.sno,
+        }, function (err, todo) {
+            if (err)
+                res.send(err);
+           res.send(todo);
+        });
     });
+    // 
+        // get for info
+        app.get('/api/info', function (req, res) { 
+            console.log("sno",req.query.sno)
+     info.findOne({
+         sno:  req.query.sno,
+     }, function (err, todo) {
+         if (err)
+             res.send(err);
+        res.send(todo);
+     });
+ });
+ // 
+    // app.get('*', function (req, res) {
+    //     res.sendFile(__dirname + '/public/index.html'); 
+    // });
 
 
 };
