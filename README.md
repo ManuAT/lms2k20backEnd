@@ -22,6 +22,8 @@ THE APP SHOWS THEM SOME CLUES, TIMER, PUZZLES, MAP OF THE CAMPUS WHICH WILL GUID
 3. Start the server: `node server.js`
 4. View in browser at `http://localhost:8080`
 
+Testing Deployment : [https://lms2k20backend-production.up.railway.app/](https://lms2k20backend-production.up.railway.app/)
+
 ![LMS App](http://i.imgur.com/ikyqgrn.png)
 
 RULES
