@@ -23,10 +23,11 @@ THE APP SHOWS THEM SOME CLUES, TIMER, PUZZLES, MAP OF THE CAMPUS WHICH WILL GUID
 4. View in browser at `http://localhost:8080`
 
 Testing Deployment : [https://lms2k20backend-production.up.railway.app/](https://lms2k20backend-production.up.railway.app/)
+<img src="https://user-images.githubusercontent.com/38802051/227913422-36725c6f-1021-4d98-8945-dd265407c2f5.png" align="left" height="600px" width="300px" >
+<!-- ![image](https://user-images.githubusercontent.com/38802051/227913422-36725c6f-1021-4d98-8945-dd265407c2f5.png) -->
 
-![LMS App](http://i.imgur.com/ikyqgrn.png)
 
-RULES
+## RULES
 
 TEAMS OF 4.
 
